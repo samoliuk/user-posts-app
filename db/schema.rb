@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2018_07_07_152713) do
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.integer "value"
+    t.float "value"
     t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2018_07_07_152713) do
     t.string "login"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["login"], name: "index_users_on_login", unique: true
   end
 
   add_foreign_key "posts", "users"

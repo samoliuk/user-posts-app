@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :rating do
-    rating 1
-    post nil
+    value 1
+    post
   end
 end

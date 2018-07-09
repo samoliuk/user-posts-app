@@ -1,5 +1,6 @@
 class Rating < ApplicationRecord
   belongs_to :post
 
-  validates_presence_of :value, :post_id
+  validates :value, presence: true, inclusion: 1..5
+  validates :post_id, presence: true
 end
