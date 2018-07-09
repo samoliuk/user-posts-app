@@ -1,8 +1,16 @@
 FactoryBot.define do
+  sequence :title do |i|
+    "Post #{i}"
+  end
+
+  sequence :author_ip, (10..255).cycle do |i|
+    "10.0.0.#{i}"
+  end
+
   factory :post do
-    title 'Post 1'
-    body 'Post 1 Body'
-    author_ip '10.0.0.10'
+    title
+    body 'Post Body'
+    author_ip
     user
   end
 

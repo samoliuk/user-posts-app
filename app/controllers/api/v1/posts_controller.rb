@@ -16,7 +16,11 @@ class Api::V1::PostsController < ApplicationController
       Rating.create(value: params[:rating], post: @post)
     end
 
-    respond_with @post, location: nil
+    respond_with @post.rating, location: nil
+  end
+
+  def shared_ips
+    respond_with Post.select("author_ip, array_agg(distinct login order by login) as user_list").joins(:user).group("author_ip").having("count(author_ip) > 1"), each_serializer: IPSerializer
   end
 
   private
