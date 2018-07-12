@@ -1,8 +1,8 @@
 class CreateRatings < ActiveRecord::Migration[5.2]
   def change
     create_table :ratings do |t|
-      t.float :value
-      t.references :post, foreign_key: true, index: true
+      t.integer :value
+      t.references :post, index: true, foreign_key: true
 
       t.timestamps
     end

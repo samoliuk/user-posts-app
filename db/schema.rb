@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2018_07_07_152713) do
     t.string "title"
     t.text "body"
     t.string "author_ip"
+    t.float "avg_rating", default: 0.0
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,7 +27,7 @@ ActiveRecord::Schema.define(version: 2018_07_07_152713) do
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.float "value"
+    t.integer "value"
     t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

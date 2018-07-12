@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :posts, only: [:create, :update_rating] do
-        #get '/rated_posts' => 'posts#rated_posts'
-        post '/update_rating/' => 'posts#update_rating'
-
-        resources :ratings, shallow: true
-      end
-      resource :posts, only: :shared_ips do
+      resource :ratings, only: :create
+      resource :posts, only: [:create, :shared_ips, :top_rated_posts] do
         get '/shared_ips' => 'posts#shared_ips'
+        get '/top_rated_posts' => 'posts#top_rated_posts'
       end
     end
   end
