@@ -38,8 +38,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'responders'
 gem 'active_model_serializers'
-gem 'concurrent-ruby', require: 'concurrent'
-gem 'activerecord-import'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -48,7 +46,6 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'database_cleaner'
-  #gem 'activerecord-import', require: false
 end
 
 group :development do

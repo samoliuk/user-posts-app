@@ -2,7 +2,6 @@ include FactoryBot::Syntax::Methods
 
 users = create_list(:user, 100)
 users.each_with_index do |u, i|
-  puts "working with user #{i}"
   (i+1951).times do |j|
     p = PostService.new(attributes_for(:post).merge(user_login: u.login)).call
 

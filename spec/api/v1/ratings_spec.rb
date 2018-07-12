@@ -63,11 +63,5 @@ RSpec.describe 'Rating API' do
         invalid_post_id_call
       end
     end
-
-    # context 'concurrent requests correctly update rating' do
-    #   it 'calls several requests and updates the rating' do
-    #
-    #   end
-    # end
   end
 end
