@@ -12,9 +12,9 @@ RSpec.describe 'Post API' do
           post api_path, params: {
             format: :json,
             post: attributes_for(:post).merge(user_login: @user.login)
-            }
-          }.to change(Post, :count).by(1)
-           .and not_change(User, :count)
+          }
+        }.to change(Post, :count).by(1)
+         .and not_change(User, :count)
       end
 
       it 'creates a new post for a new author', :skip_before_block do
@@ -22,9 +22,9 @@ RSpec.describe 'Post API' do
           post api_path, params: {
             format: :json,
             post: attributes_for(:post).merge(user_login: 'new_user')
-            }
-          }.to change(Post, :count).by(1)
-           .and change(User, :count).by(1)
+          }
+        }.to change(Post, :count).by(1)
+         .and change(User, :count).by(1)
       end
 
       it 'returns status 200' do
@@ -42,8 +42,8 @@ RSpec.describe 'Post API' do
           post api_path, params: {
             format: :json,
             post: attributes_for(:post).merge(user_login: '')
-            }
-          }.to not_change(Post, :count).and not_change(User, :count)
+          }
+        }.to not_change(Post, :count).and not_change(User, :count)
       end
 
       it 'can not create post with missed attributes', :skip_before_block do

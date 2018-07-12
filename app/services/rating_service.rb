@@ -1,7 +1,11 @@
 class RatingService
   include ActiveModel::Validations
 
-  validates :value, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
+  validates :value, presence: true, numericality: {
+                                                    only_integer: true,
+                                                    greater_than_or_equal_to: 1,
+                                                    less_than_or_equal_to: 5
+                                                  }
   validates :post_id, presence: true
 
   attr_reader :value, :post_id

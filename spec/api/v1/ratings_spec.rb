@@ -10,8 +10,8 @@ RSpec.describe 'Rating API' do
 
       let(:valid_post_call) {
         post api_path, params: {
-        format: :json,
-        rating: attributes_for(:best_rating).merge(post_id: @my_post.id)
+          format: :json,
+          rating: attributes_for(:best_rating).merge(post_id: @my_post.id)
         }
       }
 
@@ -37,15 +37,15 @@ RSpec.describe 'Rating API' do
 
       let(:invalid_post_value_call) {
         post api_path, params: {
-          format: :json,
-          rating: { value: 10 }
+            format: :json,
+            rating: { value: 10 }
           }
         }
 
       let(:invalid_post_id_call) {
         post api_path, params: {
-          format: :json,
-          rating: { value: 5, post_id: 100 }
+            format: :json,
+            rating: { value: 5, post_id: 100 }
           }
         }
 
