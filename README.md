@@ -1,24 +1,13 @@
-# README
+# API requests:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# create a post
+POST http://localhost:3000/api/v1/posts params: { post: { title: 'Post 1', body: 'Post 1 Body', author_ip: '10.0.0.10', user_login: 'my_user' }, format: :json }
 
-Things you may want to cover:
+# rate the post
+POST http://localhost:3000/api/v1/ratings params: { rating: { value: 5, post_id: 1 }, format: :json }
 
-* Ruby version
+# get top N posts
+GET http://localhost:3000/api/v1/posts/top_rated_posts params { posts_number: 5, format: :json }
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# get all IPs multiple authors used
+GET http://localhost:3000/api/v1/posts/shared_ips params { format: :json }
