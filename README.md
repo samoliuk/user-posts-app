@@ -18,8 +18,10 @@ seeds.rb should use the same code the controllers use.
 Installation instructions:
 
 1. install ruby, rails, postgresql. Tested on ruby 2.5, rails 5.2, postgresql 9.5
-2. run 'bundle' to install gems
-3. run 'puma' to start the application server
+2. clone the repository with `git clone https://github.com/samoliuk/user-posts-app.git`
+3. change to user-posts-app directory with `cd user-posts-app`
+2. run `bundle` to install gems
+3. run `puma` to start the application server
 
 
 # API requests:
